@@ -14,4 +14,11 @@ public class RunnableCounterTests {
 
         last.join();
     }
+
+    @Test
+    void whenThreadIsInterrupted_threadInterruptedShouldRemoveInterruption() throws InterruptedException {
+        var thread = new Thread(new RunnableCounter(2));
+        thread.start();
+        thread.join();
+    }
 }

@@ -2,13 +2,7 @@ package com.example.thread;
 
 import java.util.Objects;
 
-public class RunnableCounter implements Runnable {
-
-    private final Integer interruptAt;
-
-    public RunnableCounter(Integer interruptAt) {
-        this.interruptAt = interruptAt;
-    }
+public record RunnableCounter(Integer interruptAt) implements Runnable {
 
     @Override
     public void run() {
