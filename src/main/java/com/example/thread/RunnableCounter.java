@@ -1,11 +1,19 @@
 package com.example.thread;
 
+import java.util.Objects;
+
 public class RunnableCounter implements Runnable {
+
+    private final Integer interruptAt;
+
+    public RunnableCounter(Integer interruptAt) {
+        this.interruptAt = interruptAt;
+    }
 
     @Override
     public void run() {
         for (int i = 0; i < 5; i++) {
-            if (i == 2) {
+            if (interruptAt != null && Objects.equals(i, interruptAt)) {
                 Thread.currentThread().interrupt();
             }
 

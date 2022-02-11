@@ -8,7 +8,7 @@ public class RunnableCounterTests {
         Thread last = null;
 
         for (int i = 0; i < 3; i++) {
-            last = new Thread(new RunnableCounter());
+            last = new Thread(new RunnableCounter(null));
             last.start();
         }
 
