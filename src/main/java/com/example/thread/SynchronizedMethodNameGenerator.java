@@ -1,6 +1,6 @@
 package com.example.thread;
 
-public class SynchronizedNameGenerator implements NameGenerator {
+public class SynchronizedMethodNameGenerator implements NameGenerator {
     private String name = "";
 
     @Override
